@@ -44,7 +44,6 @@ describe('run job forecats', () => {
         estimatedTime: 7,
       }
     ];
-    console.log(jobs);
     const batches = splitIntoBatches(jobs)
 
     expect(batches).toHaveLength(2);

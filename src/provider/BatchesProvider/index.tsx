@@ -10,6 +10,7 @@ type BatchesContextProps = {
 
 const BatchesContext = createContext<BatchesContextProps | undefined>(undefined);
 
+
 type BatchesProviderProps = {
   children: ReactNode;
 };
@@ -20,7 +21,8 @@ const BatchesProvider: FC<BatchesProviderProps> = ({ children }) => {
   
   const updateJobs = (newJobs: Job[]) => {
     setJobs(newJobs);
-    const newBatches = splitIntoBatches(newJobs); 
+    const newBatches = splitIntoBatches(newJobs); // Suponha que generateBatches é sua função para gerar batches
+    console.log(newBatches)
     setBatches(newBatches);
   };
 

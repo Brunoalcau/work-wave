@@ -1,4 +1,4 @@
-import { FileUpload } from "../../components/atoms/fileUpload";
+import { FileUpload } from "../../components/atoms/FileUpload";
 import { useBatches } from "../../provider/BatchesProvider";
 
 

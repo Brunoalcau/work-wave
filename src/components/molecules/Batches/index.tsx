@@ -14,6 +14,7 @@ export const Batches = ({ data }: BatchesProps) => (
       {data?.map((item, index) => (
         <BatchDetails
           data={item}
+          key={index}
           title={`###${index + 1 }`} 
           trigger={
             <Card count={item.length}  key={index} text={`#${index +1}`} />

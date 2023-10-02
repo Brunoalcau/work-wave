@@ -52,7 +52,7 @@ type SideSheetTriggerProps = {
   asChild: boolean;
 };
 export const SideSheetTrigger = (props: SideSheetTriggerProps) => (
-  <Dialog.Trigger asChild {...props} />
+  <Dialog.Trigger {...props} />
 )
 
 export const SideSheet = Dialog.Root;

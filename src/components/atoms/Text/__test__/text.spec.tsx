@@ -1,20 +1,52 @@
 import { render } from '@testing-library/react';
-import { Text } from '../index'; // Importe o componente Text
+import { Text } from '../index';
 
-test('renderiza o componente Text com as classes CSS corretas', () => {
-  const { getByText } = render(
-    <>
-      <Text size="small">Small Text</Text>
-      <Text size="medium">Medium Text</Text>
-      <Text size="large">Large Text</Text>
-    </>
-  );
+describe('Text Component', () => {
+  test('Should render based on the provided properties', () => {
+    const { getByText } = render(
+      <Text size="small" color="primary">
+        Example Text
+      </Text>
+    );
 
-  const smallText = getByText('Small Text');
-  const mediumText = getByText('Medium Text');
-  const largeText = getByText('Large Text');
+    const textElement = getByText('Example Text');
+    expect(textElement).toBeInTheDocument();
+    expect(textElement).toHaveClass('text-white text-sm');
+  });
 
-  expect(smallText).toHaveClass('text-white text-sm');
-  expect(mediumText).toHaveClass('text-white text-md');
-  expect(largeText).toHaveClass('text-white text-xl');
+  test('Should render correctly with different sizes', () => {
+    const { getByText } = render(
+      <>
+        <Text size="small">Small</Text>
+        <Text size="medium">Medium</Text>
+        <Text size="large">Large</Text>
+      </>
+    );
+
+    const smallText = getByText('Small');
+    const mediumText = getByText('Medium');
+    const largeText = getByText('Large');
+
+    expect(smallText).toHaveClass('text-sm');
+    expect(mediumText).toHaveClass('text-md');
+    expect(largeText).toHaveClass('text-3xl');
+  });
+
+  test('Should render correctly with different colors', () => {
+    const { getByText } = render(
+      <>
+        <Text color="primary">Primary</Text>
+        <Text color="secondary">Secondary</Text>
+        <Text color="invited">Invited</Text>
+      </>
+    );
+
+    const primaryText = getByText('Primary');
+    const secondaryText = getByText('Secondary');
+    const invitedText = getByText('Invited');
+
+    expect(primaryText).toHaveClass('text-white');
+    expect(secondaryText).toHaveClass('text-gray-500');
+    expect(invitedText).toHaveClass('text-back');
+  });
 });

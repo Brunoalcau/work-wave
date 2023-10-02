@@ -26,7 +26,7 @@ export const BatchDetails = ({ trigger, data = [], title ='' }: BatchDetailsProp
           <Text color="invited" size="medium">Hoje</Text>
           <Separator />
           {data.map(item =>  (
-            <div>
+            <div key={item.ID}>
               <JobComponent  description={item.description} checked={false}/>
             </div>
           ))}

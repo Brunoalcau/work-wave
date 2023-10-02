@@ -21,8 +21,7 @@ const BatchesProvider: FC<BatchesProviderProps> = ({ children }) => {
   
   const updateJobs = (newJobs: Job[]) => {
     setJobs(newJobs);
-    const newBatches = splitIntoBatches(newJobs); // Suponha que generateBatches é sua função para gerar batches
-    console.log(newBatches)
+    const newBatches = splitIntoBatches(newJobs);
     setBatches(newBatches);
   };
 

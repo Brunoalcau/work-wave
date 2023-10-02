@@ -1,5 +1,6 @@
 import { UploadIcon } from "@radix-ui/react-icons";
 import { useRef, useState } from "react";
+import { Job } from "../../../entities/Job";
 import { fileToJSON } from "../../../helper/fileToJSON";
 
 type FileUploadProps = {
@@ -7,7 +8,7 @@ type FileUploadProps = {
   description?: string;
   label?: string;
   accept?: string;
-  onChange: (e: unknown | undefined) => void
+  onChange: (e: unknown | undefined | React.Dispatch<Job[]> ) => void
 }
 
 export const FileUpload = ({name, accept = 'application/JSON', description, onChange, label, ...props}: FileUploadProps) => {

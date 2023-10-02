@@ -11,16 +11,17 @@ const textCSS = tv({
     },
     color: {
       primary: 'text-white',
-      secondary: 'text-gray-500'
+      secondary: 'text-gray-500',
+      invited: 'text-back',
     }
   }
 })
 
 
 type TextProps = {
-  children: JSX.Element | string;
+  children: JSX.Element[] | JSX.Element | string | string[];
   size?: 'small'  | 'medium' | 'large'
-  color?: 'primary' | 'secondary'
+  color?: 'primary' | 'secondary' | 'invited'
 }
 
 

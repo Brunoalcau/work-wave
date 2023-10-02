@@ -1,7 +1,8 @@
 
+import { Batch } from "../entities/Batch";
 import { Job } from "../entities/Job";
 
-type Batch = Job[];
+
 
 function sortJobsByCompletionDate(jobs: Job[]): Job[] {
   return jobs.sort((a, b) => new Date(a.maxDate).getTime() - new Date(b.maxDate).getTime());
